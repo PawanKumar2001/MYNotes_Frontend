@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" rx="8" fill="#7c3aed"/>
+  <!-- Stylised M — thick strokes, slight curves to echo Lobster Two -->
+  <path
+    d="M5 24 L5 9 Q5 7.5 6.5 7.5 Q7.5 7.5 8.2 9 L16 20.5 L23.8 9 Q24.5 7.5 25.5 7.5 Q27 7.5 27 9 L27 24 Q27 25.5 25.5 25.5 Q24 25.5 24 24 L24 14.5 L17.2 24.5 Q16.5 25.5 16 25.5 Q15.5 25.5 14.8 24.5 L8 14.5 L8 24 Q8 25.5 6.5 25.5 Q5 25.5 5 24Z"
+    fill="white"
+  />
+</svg>
