@@ -52,7 +52,7 @@ const AddNote = () => {
           </div>
           <div>
             <h2 className="text-lg font-semibold text-gray-900">New Note</h2>
-            <p className="text-xs text-gray-400">Fields left empty will be saved as "Untitled"</p>
+            <p className="text-xs text-gray-400">What's on your mind?</p>
           </div>
         </div>
 
@@ -105,7 +105,7 @@ const AddNote = () => {
 
           {/* Date preview */}
           <p className="text-xs text-gray-400">
-            📅 Date will be saved as:{' '}
+            📅 {' '}
             <span className="text-gray-500 font-medium">
               {new Date().toLocaleDateString('en-IN', {
                 day: '2-digit', month: 'short', year: 'numeric',
