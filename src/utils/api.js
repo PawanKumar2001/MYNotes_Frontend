@@ -19,11 +19,12 @@ api.interceptors.request.use((config) => {
 // Auth routes
 export const loginUser    = (data) => api.post('/authorization/login', data)
 export const registerUser = (data) => api.post('/authorization/createuser', data)
+export const updateUser   = (data) => api.put('/authorization/updateuser', data)
 
 // Notes routes
-export const fetchNotes  = ()     => api.get('/notes/fetchnotes')
-export const addNote     = (data) => api.post('/notes/addnote', data)
-export const deleteNote  = (id)   => api.delete(`/notes/deletenote/${id}`)
-export const updateNote  = (id, data) => api.put(`/notes/updatenote/${id}`, data)
+export const fetchNotes  = ()         => api.get('/notes/fetchnotes')
+export const addNote     = (data)     => api.post('/notes/addnote', data)
+export const deleteNote  = (id)       => api.delete('/notes/deletenote/' + id)
+export const updateNote  = (id, data) => api.put('/notes/updatenote/' + id, data)
 
 export default api

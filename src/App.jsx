@@ -3,13 +3,11 @@ import { Toaster } from 'react-hot-toast'
 import AuthPage from './pages/AuthPage'
 import HomePage from './pages/HomePage'
 
-// Protected route — redirects to /auth if no token
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem('authorization-token')
-  return token ? children : <Navigate to="/auth" replace />
+  return token ? children : <Navigate to="/" replace />
 }
 
-// Public route — redirects to /allnotes if already logged in
 const PublicRoute = ({ children }) => {
   const token = localStorage.getItem('authorization-token')
   return !token ? children : <Navigate to="/allnotes" replace />
@@ -39,43 +37,17 @@ function App() {
       />
 
       <Routes>
-        {/* Default redirect */}
-        <Route path="/" element={
-          <PublicRoute>
-            <AuthPage />
-          </PublicRoute>
-        } />
-
-        {/* Auth page (public only) */}
-        <Route
-          path="/auth"
-          element={
-            <PublicRoute>
-              <AuthPage />
-            </PublicRoute>
-          }
-        />
+        {/* Landing — Auth page */}
+        <Route path="/" element={<PublicRoute><AuthPage /></PublicRoute>} />
+        <Route path="/auth" element={<PublicRoute><AuthPage /></PublicRoute>} />
 
         {/* Protected home routes */}
-        <Route
-          path="/addnote"
-          element={
-            <ProtectedRoute>
-              <HomePage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/allnotes"
-          element={
-            <ProtectedRoute>
-              <HomePage />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="/allnotes"    element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
+        <Route path="/addnote"     element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
+        <Route path="/editprofile" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
 
         {/* Catch-all */}
-        <Route path="*" element={<Navigate to="/auth" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   )
